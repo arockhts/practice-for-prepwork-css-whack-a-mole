@@ -1,3 +1,15 @@
+NOTE:
+I had a lot of trouble with the bonus step of this assignment.
+The bonus step wanted me to animate the mole when it was clicked.
+I tried variations with animations/keyframes, as well as transitions.
+Each of these had their own setbacks for me in one way or another.
+
+If I revisit this project later down the line when my skills have increased,
+I would love to take another stab at the last bonus step.
+
+
+
+
 # Whack-A-Mole
 
 This project ties together the CSS features that you've learned so far:

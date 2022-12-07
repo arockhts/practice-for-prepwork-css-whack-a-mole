@@ -10,7 +10,7 @@ function popUpRandomMole() {
     return;
   }
 
-  const moleHeads = document.querySelectorAll('.wgs__mole-head:not(.wgs__mole-head--whacked)');
+  const moleHeads = document.querySelectorAll('.wgs_mole-head:not(.wgs_mole-head--whacked)');
   if (moleHeads.length === 0) {
     return;
   }
@@ -18,7 +18,7 @@ function popUpRandomMole() {
   const moleHead = moleHeads[moleIndex];
 
   clickable = true;
-  moleHead.classList.remove('wgs__mole-head--hidden');
+  moleHead.classList.remove('wgs_mole-head--hidden');
 
   molesLeft -= 1;
   document.querySelector('.sb__moles').innerHTML = molesLeft;
@@ -28,7 +28,7 @@ function popUpRandomMole() {
 
 function hideMole(mole) {
   clickable = false;
-  mole.classList.add('wgs__mole-head--hidden');
+  mole.classList.add('wgs_mole-head--hidden');
 
   setTimeout(popUpRandomMole, 500);
 }
@@ -36,7 +36,7 @@ function hideMole(mole) {
 window.addEventListener('DOMContentLoaded', () => {
   setTimeout(popUpRandomMole, 0);
 
-  const moleHeads = document.querySelectorAll('.wgs__mole-head');
+  const moleHeads = document.querySelectorAll('.wgs_mole-head');
   for (let moleHead of moleHeads) {
     moleHead.addEventListener('click', event => {
       if (!clickable) return;
@@ -48,11 +48,11 @@ window.addEventListener('DOMContentLoaded', () => {
       clearTimeout(hideTimeout);
       hideMole(event.target);
 
-      // UNCOMMENT THIS LINE OF CODE WHEN DIRECTED
-      // event.target.classList.add('wgs__mole-head--hidden');
 
-      // UNCOMMENT THIS LINE OF CODE WHEN DIRECTED FOR THE BONUS
-      // event.target.classList.add('wgs__mole-head--whacked');
+      event.target.classList.add('wgs_mole-head--hidden');
+
+
+      event.target.classList.add('wgs__mole-head--whacked');
     });
   }
 });
